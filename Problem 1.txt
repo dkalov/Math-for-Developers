@@ -1,0 +1,45 @@
+/*Problem 1. Some Primes
+Find the 24th, 101st and 251st prime number.*/
+using System;
+
+namespace _01SomePrimes
+{
+    class SomePrimes
+    {
+        static void Main(string[] args)
+        {
+            int count = 0;
+            for (int num = 2; num <= 1600; num++)
+            {
+                bool prime = true;
+                int divider = 2;
+                int maxDivider = (int)Math.Sqrt(num);
+                while (divider <= maxDivider)
+                {
+                    if (num % divider == 0)
+                    {
+                        prime = false;
+                        break;
+                    }
+                    divider++;
+                }
+                if (prime)
+                {
+                    count++;
+                    if (count == 24)
+                    {
+                        Console.WriteLine("{0} is 24th prime number.", num);    //89
+                    }
+                    if (count == 101)
+                    {
+                        Console.WriteLine("{0} is 101st prime number.", num);   //547
+                    }
+                    if (count == 251)
+                    {
+                        Console.WriteLine("{0} is 251st prime number.", num);   //1597
+                    }
+                }
+            }
+        }
+    }
+}

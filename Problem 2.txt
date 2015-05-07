@@ -1,0 +1,39 @@
+/*Problem 2. Some Fibonacci Primes
+Check if the 24th, 101st and 251st prime numbers are part of the base Fibonacci number set. What is their position?*/
+using System;
+
+namespace _02SomeFibonacciPrimes
+{
+    class SomeFibonacciPrimes
+    {
+        static void Main(string[] args)
+        {
+            decimal count = 0;
+            decimal firstVariable = 0;
+            decimal secondVarialbe = 1;
+            decimal thirdVariable = 0;
+            for (int i = 0; i < 20; i++)
+            {
+                thirdVariable = secondVarialbe;
+                secondVarialbe += firstVariable;
+                firstVariable = thirdVariable;
+                if (true)
+                {
+                    count++;
+                    if (firstVariable == 89)
+                    {
+                        Console.WriteLine("The position of number 89 is {0}.", count);
+                    }
+                    if (firstVariable == 547)
+                    {
+                        Console.WriteLine("The position of number 547 is {0}.", count);
+                    }
+                    if (firstVariable == 1597)
+                    {
+                        Console.WriteLine("The position of number 1597 is {0}.", count);
+                    }
+                }
+            }
+        }
+    }
+}

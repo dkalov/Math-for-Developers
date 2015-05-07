@@ -1,0 +1,22 @@
+/*Problem 4. Calculate Hypotenuse
+You are given three right angled triangles. Find the length of their hypotenuses.
+1.	Catheti:  3 and 4    = 5;
+2.	Catheti:  10 and 12  = 15,6204993518133;
+3.	Catheti: 100 and 250 = 269,258240356725; */
+using System;
+
+namespace _04CalculateHypotenuse
+{
+    class CalculateHypotenuse
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Cathetus A = ");
+            int sideA = int.Parse(Console.ReadLine());
+            Console.Write("Cathetus B = ");
+            int sideB = int.Parse(Console.ReadLine());
+            double result = Math.Sqrt((sideA * sideA) + (sideB * sideB));
+            Console.WriteLine(result);
+        }
+    }
+}

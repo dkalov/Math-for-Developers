@@ -1,0 +1,46 @@
+/*Problem 6. Least Common Multiple
+Find LCM(1234, 3456).*/
+using System;
+
+namespace _06LeastCommonMultiple
+{
+    class LeastCommonMultiple
+    {
+        static void Main(string[] args)
+        {
+            int firstVariable = 1234;
+            int secondVariable = 3456;
+            int biggerNumber = 0;
+            int smallerNumber = 0;
+            int LCM = 0;
+            if (firstVariable > secondVariable)
+            {
+                biggerNumber = firstVariable;
+                smallerNumber = secondVariable;
+            }
+            if (firstVariable < secondVariable)
+            {
+                biggerNumber = secondVariable;
+                smallerNumber = firstVariable;
+            }
+            if (firstVariable == secondVariable)
+            {
+                biggerNumber = secondVariable;
+                smallerNumber = biggerNumber;
+            }
+            for (int i = 0; i < 100; i++)
+            {
+                int result = biggerNumber % smallerNumber;
+                biggerNumber = smallerNumber;
+                smallerNumber = result;
+
+                if (result == 0)
+                {
+                    break;
+                }
+                LCM = (firstVariable * secondVariable) / result;
+            }           
+            Console.WriteLine("LCM ({0}, {1}) = {2}",firstVariable, secondVariable, LCM);
+        }
+    }
+}
